@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # _*_ coding:utf-8 _*_
 
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from preprocess import PREPROCESS
 from generator import GENERATOR
 from sa import SA
@@ -47,33 +47,33 @@ def display(point_file,line_file):
 
     f.close()
 
-    fig = plt.figure()
-    ax = fig.add_subplot(1,1,1)
-    ax.set_title('RAW_MAP')
-    ax.set_xlabel('x')
-    ax.set_ylabel('y')
-    for i in range(len(result_point)):
-        if result_point[i][2] != 0:
-            ax.plot(result_point[i][0],result_point[i][1],'o',color='green')
-            ax.text(result_point[i][0],result_point[i][1],str(result_point[i][2]),color='green',fontsize = 10)
-        elif result_point[i][3] != 0:
-            ax.plot(result_point[i][0],result_point[i][1],'o',color='red')
-            ax.text(result_point[i][0], result_point[i][1], str(result_point[i][3]), color='red',fontsize = 10)
-        else:
-            ax.plot(result_point[i][0], result_point[i][1], 'o', color='black')
+    # fig = plt.figure()
+    # ax = fig.add_subplot(1,1,1)
+    # ax.set_title('RAW_MAP')
+    # ax.set_xlabel('x')
+    # ax.set_ylabel('y')
+    # for i in range(len(result_point)):
+    #     if result_point[i][2] != 0:
+    #         ax.plot(result_point[i][0],result_point[i][1],'o',color='green')
+    #         ax.text(result_point[i][0],result_point[i][1],str(result_point[i][2]),color='green',fontsize = 10)
+    #     elif result_point[i][3] != 0:
+    #         ax.plot(result_point[i][0],result_point[i][1],'o',color='red')
+    #         ax.text(result_point[i][0], result_point[i][1], str(result_point[i][3]), color='red',fontsize = 10)
+    #     else:
+    #         ax.plot(result_point[i][0], result_point[i][1], 'o', color='black')
 
-    for i in range(len(result_line)):
-        x = []
-        y = []
-        x.append(result_point[result_line[i][0]][0])
-        x.append(result_point[result_line[i][1]][0])
-        y.append(result_point[result_line[i][0]][1])
-        y.append(result_point[result_line[i][1]][1])
-        ax.plot(x,y,color='black')
-        ax.text((x[0]+x[1])/2,(y[0]+y[1])/2,'%.2f'%result_line[i][2],color='blue',fontsize = 5)
+    # for i in range(len(result_line)):
+    #     x = []
+    #     y = []
+    #     x.append(result_point[result_line[i][0]][0])
+    #     x.append(result_point[result_line[i][1]][0])
+    #     y.append(result_point[result_line[i][0]][1])
+    #     y.append(result_point[result_line[i][1]][1])
+    #     ax.plot(x,y,color='black')
+    #     ax.text((x[0]+x[1])/2,(y[0]+y[1])/2,'%.2f'%result_line[i][2],color='blue',fontsize = 5)
 
-    ax.axis([0,550,0,550])
-    plt.savefig("raw_graph.jpg")
+    # ax.axis([0,550,0,550])
+    # plt.savefig("raw_graph.jpg")
     # print(point_remain)
     # print(raw_matrix)
 
@@ -158,33 +158,33 @@ def display_again(point_file,line_file):
 
     f.close()
 
-    fig = plt.figure()
-    ax = fig.add_subplot(1,1,1)
-    ax.set_title('NEW_MAP')
-    ax.set_xlabel('x')
-    ax.set_ylabel('y')
-    for i in range(len(point_remain)):
-        if result_point[point_remain[i]][2] != 0:
-            ax.plot(result_point[point_remain[i]][0],result_point[point_remain[i]][1],'o',color='green')
-            ax.text(result_point[point_remain[i]][0],result_point[point_remain[i]][1],str(result_point[point_remain[i]][2]),color='green',fontsize = 10)
-        elif result_point[point_remain[i]][3] != 0:
-            ax.plot(result_point[point_remain[i]][0],result_point[point_remain[i]][1],'o',color='red')
-            ax.text(result_point[point_remain[i]][0],result_point[point_remain[i]][1],str(result_point[point_remain[i]][3]),color='red',fontsize = 10)
-        # else:
-        #     ax.plot(result_point[i][0], result_point[i][1], 'o', color='black')
+    # fig = plt.figure()
+    # ax = fig.add_subplot(1,1,1)
+    # ax.set_title('NEW_MAP')
+    # ax.set_xlabel('x')
+    # ax.set_ylabel('y')
+    # for i in range(len(point_remain)):
+    #     if result_point[point_remain[i]][2] != 0:
+    #         ax.plot(result_point[point_remain[i]][0],result_point[point_remain[i]][1],'o',color='green')
+    #         ax.text(result_point[point_remain[i]][0],result_point[point_remain[i]][1],str(result_point[point_remain[i]][2]),color='green',fontsize = 10)
+    #     elif result_point[point_remain[i]][3] != 0:
+    #         ax.plot(result_point[point_remain[i]][0],result_point[point_remain[i]][1],'o',color='red')
+    #         ax.text(result_point[point_remain[i]][0],result_point[point_remain[i]][1],str(result_point[point_remain[i]][3]),color='red',fontsize = 10)
+    #     # else:
+    #     #     ax.plot(result_point[i][0], result_point[i][1], 'o', color='black')
 
-    for i in range(len(result_line)):
-        x = []
-        y = []
-        x.append(result_point[result_line[i][0]][0])
-        x.append(result_point[result_line[i][1]][0])
-        y.append(result_point[result_line[i][0]][1])
-        y.append(result_point[result_line[i][1]][1])
-        ax.plot(x,y,color='black')
-        ax.text((x[0]+x[1])/2,(y[0]+y[1])/2,'%.2f'%result_line[i][2],color='blue',fontsize = 5)
+    # for i in range(len(result_line)):
+    #     x = []
+    #     y = []
+    #     x.append(result_point[result_line[i][0]][0])
+    #     x.append(result_point[result_line[i][1]][0])
+    #     y.append(result_point[result_line[i][0]][1])
+    #     y.append(result_point[result_line[i][1]][1])
+    #     ax.plot(x,y,color='black')
+    #     ax.text((x[0]+x[1])/2,(y[0]+y[1])/2,'%.2f'%result_line[i][2],color='blue',fontsize = 5)
 
-    ax.axis([0,550,0,550])
-    plt.savefig("new_graph.jpg")
+    # ax.axis([0,550,0,550])
+    # plt.savefig("new_graph.jpg")
     # print(point_remain)
     # print(raw_matrix)
 
@@ -267,11 +267,11 @@ def sa(point_file,line_file):
     return result_route
 
 def display_route(point_file,result):
-    fig = plt.figure()
-    ax = fig.add_subplot(1, 1, 1)
-    ax.set_title('ROUTE_MAP')
-    ax.set_xlabel('x')
-    ax.set_ylabel('y')
+    # fig = plt.figure()
+    # ax = fig.add_subplot(1, 1, 1)
+    # ax.set_title('ROUTE_MAP')
+    # ax.set_xlabel('x')
+    # ax.set_ylabel('y')
 
     f = open(point_file)  # read point file
     content = f.read()
@@ -289,27 +289,27 @@ def display_route(point_file,result):
         num += 1
     f.close()
 
-    for i in range(len(result)-1):
-        if result_point[result[i]][2] != 0:
-            ax.plot(result_point[result[i]][0],result_point[result[i]][1],'o',color='green')
-            ax.text(result_point[result[i]][0],result_point[result[i]][1],str(result_point[result[i]][2]),color='green',fontsize = 10)
-        elif result_point[result[i]][3] != 0:
-            ax.plot(result_point[result[i]][0],result_point[result[i]][1],'o',color='red')
-            ax.text(result_point[result[i]][0],result_point[result[i]][1],str(result_point[result[i]][3]),color='red',fontsize = 10)
-        else:
-            ax.plot(result_point[result[i]][0],result_point[result[i]][1],'o',color='black')
+    # for i in range(len(result)-1):
+    #     if result_point[result[i]][2] != 0:
+    #         ax.plot(result_point[result[i]][0],result_point[result[i]][1],'o',color='green')
+    #         ax.text(result_point[result[i]][0],result_point[result[i]][1],str(result_point[result[i]][2]),color='green',fontsize = 10)
+    #     elif result_point[result[i]][3] != 0:
+    #         ax.plot(result_point[result[i]][0],result_point[result[i]][1],'o',color='red')
+    #         ax.text(result_point[result[i]][0],result_point[result[i]][1],str(result_point[result[i]][3]),color='red',fontsize = 10)
+    #     else:
+    #         ax.plot(result_point[result[i]][0],result_point[result[i]][1],'o',color='black')
 
-    for i in range(len(result)-1):
-        x = []
-        y = []
-        x.append(result_point[result[i]][0])
-        x.append(result_point[result[i+1]][0])
-        y.append(result_point[result[i]][1])
-        y.append(result_point[result[i+1]][1])
-        ax.plot(x,y,color='blue')
+    # for i in range(len(result)-1):
+    #     x = []
+    #     y = []
+    #     x.append(result_point[result[i]][0])
+    #     x.append(result_point[result[i+1]][0])
+    #     y.append(result_point[result[i]][1])
+    #     y.append(result_point[result[i+1]][1])
+    #     ax.plot(x,y,color='blue')
 
-    ax.axis([0, 550, 0, 550])
-    plt.savefig("route_graph.jpg")
+    # ax.axis([0, 550, 0, 550])
+    # plt.savefig("route_graph.jpg")
 
 def multimission(point_file,line_file):
     f = open(point_file)  # read point file
@@ -422,11 +422,11 @@ def multimission(point_file,line_file):
     return result_route1,result_route2
 
 def display_multi_route(point_file,result1,result2):
-    fig = plt.figure()
-    ax = fig.add_subplot(1, 1, 1)
-    ax.set_title('MULTI_ROUTE_MAP')
-    ax.set_xlabel('x')
-    ax.set_ylabel('y')
+    # fig = plt.figure()
+    # ax = fig.add_subplot(1, 1, 1)
+    # ax.set_title('MULTI_ROUTE_MAP')
+    # ax.set_xlabel('x')
+    # ax.set_ylabel('y')
 
     f = open(point_file)  # read point file
     content = f.read()
@@ -444,50 +444,50 @@ def display_multi_route(point_file,result1,result2):
         num += 1
     f.close()
 
-    for i in range(len(result1) - 1):
-        if result_point[result1[i]][2] != 0:
-            ax.plot(result_point[result1[i]][0], result_point[result1[i]][1], 'o', color='green')
-            ax.text(result_point[result1[i]][0], result_point[result1[i]][1], str(result_point[result1[i]][2]),
-                    color='green', fontsize=10)
-        elif result_point[result1[i]][3] != 0:
-            ax.plot(result_point[result1[i]][0], result_point[result1[i]][1], 'o', color='red')
-            ax.text(result_point[result1[i]][0], result_point[result1[i]][1], str(result_point[result1[i]][3]),
-                    color='red', fontsize=10)
-        else:
-            ax.plot(result_point[result1[i]][0], result_point[result1[i]][1], 'o', color='black')
+    # for i in range(len(result1) - 1):
+    #     if result_point[result1[i]][2] != 0:
+    #         ax.plot(result_point[result1[i]][0], result_point[result1[i]][1], 'o', color='green')
+    #         ax.text(result_point[result1[i]][0], result_point[result1[i]][1], str(result_point[result1[i]][2]),
+    #                 color='green', fontsize=10)
+    #     elif result_point[result1[i]][3] != 0:
+    #         ax.plot(result_point[result1[i]][0], result_point[result1[i]][1], 'o', color='red')
+    #         ax.text(result_point[result1[i]][0], result_point[result1[i]][1], str(result_point[result1[i]][3]),
+    #                 color='red', fontsize=10)
+    #     else:
+    #         ax.plot(result_point[result1[i]][0], result_point[result1[i]][1], 'o', color='black')
 
-    for i in range(len(result1) - 1):
-        x = []
-        y = []
-        x.append(result_point[result1[i]][0])
-        x.append(result_point[result1[i + 1]][0])
-        y.append(result_point[result1[i]][1])
-        y.append(result_point[result1[i + 1]][1])
-        ax.plot(x, y, color='blue')
+    # for i in range(len(result1) - 1):
+    #     x = []
+    #     y = []
+    #     x.append(result_point[result1[i]][0])
+    #     x.append(result_point[result1[i + 1]][0])
+    #     y.append(result_point[result1[i]][1])
+    #     y.append(result_point[result1[i + 1]][1])
+    #     ax.plot(x, y, color='blue')
 
-    for i in range(len(result2) - 1):
-        if result_point[result2[i]][2] != 0:
-            ax.plot(result_point[result2[i]][0], result_point[result2[i]][1], 'o', color='green')
-            ax.text(result_point[result2[i]][0], result_point[result2[i]][1], str(result_point[result2[i]][2]),
-                    color='green', fontsize=10)
-        elif result_point[result2[i]][3] != 0:
-            ax.plot(result_point[result2[i]][0], result_point[result2[i]][1], 'o', color='red')
-            ax.text(result_point[result2[i]][0], result_point[result2[i]][1], str(result_point[result2[i]][3]),
-                    color='red', fontsize=10)
-        else:
-            ax.plot(result_point[result2[i]][0], result_point[result2[i]][1], 'o', color='black')
+    # for i in range(len(result2) - 1):
+    #     if result_point[result2[i]][2] != 0:
+    #         ax.plot(result_point[result2[i]][0], result_point[result2[i]][1], 'o', color='green')
+    #         ax.text(result_point[result2[i]][0], result_point[result2[i]][1], str(result_point[result2[i]][2]),
+    #                 color='green', fontsize=10)
+    #     elif result_point[result2[i]][3] != 0:
+    #         ax.plot(result_point[result2[i]][0], result_point[result2[i]][1], 'o', color='red')
+    #         ax.text(result_point[result2[i]][0], result_point[result2[i]][1], str(result_point[result2[i]][3]),
+    #                 color='red', fontsize=10)
+    #     else:
+    #         ax.plot(result_point[result2[i]][0], result_point[result2[i]][1], 'o', color='black')
 
-    for i in range(len(result2) - 1):
-        x = []
-        y = []
-        x.append(result_point[result2[i]][0])
-        x.append(result_point[result2[i + 1]][0])
-        y.append(result_point[result2[i]][1])
-        y.append(result_point[result2[i + 1]][1])
-        ax.plot(x, y, color='purple')
+    # for i in range(len(result2) - 1):
+    #     x = []
+    #     y = []
+    #     x.append(result_point[result2[i]][0])
+    #     x.append(result_point[result2[i + 1]][0])
+    #     y.append(result_point[result2[i]][1])
+    #     y.append(result_point[result2[i + 1]][1])
+    #     ax.plot(x, y, color='purple')
 
-    ax.axis([0, 550, 0, 550])
-    plt.savefig("multi_route_graph.jpg")
+    # ax.axis([0, 550, 0, 550])
+    # plt.savefig("multi_route_graph.jpg")
     
 def display(event,context):
     initialize("raw_point.txt","raw_line.txt")
