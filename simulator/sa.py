@@ -39,9 +39,11 @@ class SA(object):
             while count_reject<REJECT_NUM and count_iteration<ITERATION_NUM:    # reject loop
                 point1 = 0
                 point2 = 0
-                while point1==point2:       # point1!=point2
+                judge = 0
+                while point1==point2 and judge < 20:       # point1!=point2     perhaps num_of_point = 2
                     point1 = random.randint(1,self.num_of_point-1)
                     point2 = random.randint(1,self.num_of_point-1)
+                    judge += 1
                 temp = path[point1]     # swap and temp = point1
                 path[point1] = path[point2]
                 path[point2] = temp
@@ -61,7 +63,7 @@ class SA(object):
                 count_iteration += 1
             current_temperature *= 0.99         # change the temperature
 
-        #print(path)
+        print(path)
         return[dis,path]
 
     def min_path_2(self,start_id):
